@@ -11,33 +11,24 @@ Create a single resource REST API using a domain model of your choosing, constru
 ### Links and Resources
 
 - [API](https://tdf50r5i93.execute-api.us-west-2.amazonaws.com/lab18/people) 
-- [GitHub PR](http://xyz.com) (when applicable)
-
-
-### Setup
-
-#### `.env` requirements (where applicable)
-
-for now I have none and do not require one
-
-
-#### How to initialize/run your application (where applicable)
-
-- e.g. `npm start`
-
-#### How to use your library (where applicable)
+- [GitHub PR](https://github.com/villafanam/api-gateway-dynamo-db/pull/1) 
 
 #### Features / Routes
 
 - Feature One: Details of feature
-- GET : `/hello` - specific route to hit
+- POST : `/people/` - Given a JSON body, inserts a record into the database. 
+  - returns an object representing one record, by its id (##).
 
-#### Tests
+- GET : `/people/:id` -  returns an array of objects representing the records in the database.
+- GET : `/people/:id` - returns an object representing one record, by its id (##).
+- PUT : `/people/:id` - Given a JSON body and an ID (##), updates a record in the database.
+  - returns an object representing one record, by its id (##).
 
-- How do you run tests?
-- Any tests of note?
-- Describe any tests that you did not complete, skipped, etc
+- DELETE : `/people/:id` - Given an id (##) removes the matching record from the database.
+  - returns an empty object.
 
 #### UML
 
-Link to an image of the UML for your application and response to events
+![class 18 uml](/assets/lab18_uml.png)
+
+UML from [Today's Freehand](https://projects.invisionapp.com/freehand/document/aVGGthcbV)
