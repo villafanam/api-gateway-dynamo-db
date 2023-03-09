@@ -18,15 +18,15 @@ exports.handler = async (event) => {
   let results = null;
   
   try {
-    let id = event.pathParameters.id;//JSON.stringify(event.pathParameters.id);
+    let id = event?.pathParameters?.id;//JSON.stringify(event.pathParameters.id);
     console.warn('id', id);
-    if(event.pathParameters)
+    if(!id)
     {
-      results = await peopleModel.get({"id": id});
+      results = await peopleModel.scan().exec();
     }
     else
     {
-      results = await peopleModel.scan().exec();
+      results = await peopleModel.get({"id": id});
     }
     
     console.log(results);
